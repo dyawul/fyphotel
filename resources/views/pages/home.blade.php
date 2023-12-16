@@ -190,7 +190,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-4">
                     <div class="card card-testimonial text-center">
                         <div class="testimonial-content">
-                            <img src="frontend/images/testimonial-3.png" alt="User" class="mb-4 rounded-circle" />
+                            <img src="{{ url('frontend/images/testimonial-3.png') }}" alt="User" class="mb-4 rounded-circle" />
                             <h3 class="mb-4">Shabrina</h3>
                             <p class="testimonial">
                                 “  Magnam tempore amet, tenetur praesentium ut quidem maxime dicta accusamus eligendi aperiam corrupti labore assumenda illo? “
