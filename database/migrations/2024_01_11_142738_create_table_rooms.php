@@ -16,13 +16,13 @@ class CreateTableRooms extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->foreignId('type_id')->constrained();
-            $table->bigIncrements('room_status_id')->constrained();
+            $table->foreignId('room_status_id')->constrained();
             $table->string('number');
             $table->bigInteger('capacity');
             $table->double('price');
             $table->longText('view');
             $table->timestamps();
-
+            $table->softDeletes();
         });
     }
 
