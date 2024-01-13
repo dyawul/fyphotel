@@ -15,6 +15,16 @@ class Room extends Model
         'number',
         'capacity',
         'price',
-        'view',
+        'view'
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
+    public function roomStatus()
+    {
+        return $this->belongsTo(RoomStatus::class);
+    }
 }
