@@ -17,9 +17,10 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->foreignId('type_id')->constrained();
             $table->foreignId('room_status_id')->constrained();
+            $table->string('slug', 100);
             $table->string('number');
             $table->bigInteger('capacity');
-            $table->double('price');
+            $table->integer('price')->unsigned();
             $table->longText('view');
             $table->timestamps();
             $table->softDeletes();
