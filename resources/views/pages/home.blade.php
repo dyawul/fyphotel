@@ -27,7 +27,7 @@
             <div class="col-12 col-md-10 stats-detail">
                 <form class="form-inline custom-form">
                     @csrf
-                    <label for="inputUsername" class="sr-only"></label>
+                    <label for="inputUsername" class="sr-only">How many Person</label>
                     <input type="number" name="inputUsername" class="form-control mb-2 mr-sm-2" id="inputUsername" placeholder="How many person">
                     <label for="checkIn" class="sr-only">Check In</label>
                     <div class="input-group mb-2 mr-sm-2">
