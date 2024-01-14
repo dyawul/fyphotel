@@ -40,7 +40,7 @@ body {
 
 header {
   padding: 180px 0 165px;
-  margin-top: -70px;
+  margin-top: -68px;
   background-image: url("../images/header.jpg");
   background-size: cover;
 }
@@ -48,7 +48,7 @@ header h1, header p {
   color: #FFFFFF;
 }
 header h1 {
-  font-family: "Playfair Display", serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: bold;
   font-size: 50px;
 }
@@ -56,11 +56,11 @@ header p {
   font-size: 22px;
 }
 header .btn-get-started {
-  background-color: #FF9E53;
+  background-color: #3F0071;
   color: #FFF;
 }
 header .btn-get-started:hover {
-  background-color: #FFAA69;
+  background-color: #211B3D;
   color: #FFF;
 }
 
@@ -77,7 +77,7 @@ header .btn-get-started:hover {
   padding: 14px;
 }
 .section-stats .custom-form .btn-add-now {
-  background-color: #3F0071;
+  background-color: #000;
   color: #FFF;
 }
 .section-stats .custom-form .btn-add-now:hover {
@@ -111,7 +111,7 @@ header .btn-get-started:hover {
   color: #FFF;
 }
 .section-popular .section-popular-heading h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: bold;
   font-size: 40px;
 }
@@ -136,16 +136,16 @@ header .btn-get-started:hover {
   color: #FFF;
 }
 .section-popular-content .section-popular-travel .travel-button .btn-travel-details {
-  background-color: #FF9E53;
+  background-color: #3F0071;
   color: #FFF;
 }
 .section-popular-content .section-popular-travel .travel-button .btn-travel-details:hover {
-  background-color: #FFAE6F;
+  background-color: #211B3D;
   color: #FFF;
 }
 
 .section-networks {
-  background-color: #FFF;
+  background-color: #211B3D;
   margin-top: -170px;
   padding-top: 240px;
   padding-bottom: 50px;
@@ -163,20 +163,23 @@ header .btn-get-started:hover {
 }
 
 .section-testimonial-heading {
-  background: linear-gradient(#fff 0%, #f7f9ff 100%);
+  background-color: #211B3D;
   padding-top: 50px;
   min-height: 506px;
 }
 .section-testimonial-heading h2 {
+  color: #fff;
   font-family: "Playfair Display", serif;
   font-weight: bold;
   font-size: 40px;
 }
 .section-testimonial-heading p {
+  color: #fff;
   font-size: 18px;
 }
 
 .section-testimonial-content {
+  background-color: #000;
   margin-top: -300px;
   padding-bottom: 50px;
 }
@@ -207,11 +210,11 @@ header .btn-get-started:hover {
   margin-right: -20px;
 }
 .section-testimonial-content .btn-get-started {
-  background-color: #FF9E53;
+  background-color: #3F0071;
   color: #FFF;
 }
 .section-testimonial-content .btn-get-started:hover {
-  background-color: #FFAA69;
+  background-color: #211B3D;
   color: #FFF;
 }
 .section-testimonial-content .btn-need-help {
@@ -224,6 +227,7 @@ header .btn-get-started:hover {
 }
 
 .section-footer a {
+  font-family: "Ubuntu", sans-serif;
   color: #071C4D;
 }
 
@@ -398,4 +402,76 @@ header .btn-get-started:hover {
 .section-success .btn-home-page:hover {
   background-color: #2A488E;
   color: #FFF;
+}
+
+.login-user .right {
+  width: 50%;
+  float: left;
+  padding: 120px;
+}
+.login-user .right .people {
+  margin-top: 100px;
+  height: 170px;
+}
+.login-user .right .logo {
+  height: 42px;
+  margin-bottom: 100px;
+}
+.login-user .right .btn-border {
+  border: 1px solid #E7E5F4;
+  border-radius: 50px;
+  padding: 12px 80px 12px 80px;
+}
+.login-user .right .btn-google-login {
+  margin-top: 40px;
+}
+.login-user .right .btn-google-login .icon {
+  margin-right: 8px;
+}
+.login-user .left {
+  background-color: #211B3D;
+  width: 50%;
+  min-height: 900px;
+  text-align: center;
+  float: left;
+}
+.login-user .left img {
+  margin-top: 160px;
+  height: 540px;
+}
+
+.clear {
+  clear: both;
+}
+
+.section-success {
+  height: 92vh;
+  background-color: #211B3D;
+}
+.section-success h1 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #fff;
+}
+.section-success p {
+  font-weight: 300;
+  font-size: 18px;
+  color: #B1B1B1;
+}
+.section-success .btn-master, .section-success .btn-home-page, .section-success .btn-thirdty {
+  padding: 11px 36px 11px 36px;
+  border-radius: 100px;
+  border: 0;
+  font-weight: 500;
+}
+.section-success .btn-thirdty {
+  background: #31B380;
+  color: #fff;
+}
+.section-success .btn-home-page {
+  background: #3F0071;
+  color: #fff;
+}
+.section-success .btn-home-page:hover {
+  background: #31B380;
 }/*# sourceMappingURL=main.css.map */
