@@ -24,20 +24,21 @@
 <main>
     <div class="container ">
         <section class="section-stats row justify-content-center" id="stats">
-            <div class="col-12 col-md-9 stats-detail">
+            <div class="col-12 col-md-10 stats-detail">
                 <form class="form-inline custom-form">
+                    @csrf
+                    <label for="inputUsername" class="sr-only"></label>
+                    <input type="number" name="inputUsername" class="form-control mb-2 mr-sm-2" id="inputUsername" placeholder="How many person">
                     <label for="checkIn" class="sr-only">Check In</label>
                     <div class="input-group mb-2 mr-sm-2">
                         <input type="text" class="form-control datepicker" id="checkIn" placeholder="Check In">
                     </div>
-                    <!-- <label for="inputUsername" class="sr-only">Name</label>
-                    <input type="text" name="inputUsername" class="form-control mb-2 mr-sm-2" id="inputUsername" placeholder="Username"> -->
-                    <label for="inputCity" class="sr-only">Jombang</label>
+                    {{-- <label for="inputCity" class="sr-only">Jombang</label>
                     <select name="inputCity" id="inputCity" class="custom-select mb-2 mr-sm-2">
                         <option value="Jombang" selected>Jombang</option>
                         <option value="Surabaya">Surabaya</option>
                         <option value="Semarang">Semarang</option>
-                    </select>
+                    </select> --}}
 
                     <label for="checkOut" class="sr-only">Check Out</label>
                     <div class="input-group mb-2 mr-sm-2">
@@ -124,20 +125,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h2>Our Networks</h2>
+                    {{-- <h2>Our Networks</h2> --}}
                     <p>
-                       Companies are trusted us
+                       {{-- Companies are trusted us --}}
                        <br />
-                       more than just a trip 
+                       {{-- more than just a trip  --}}
                     </p>
                 </div>
                 <div class="col-md-8 text-center">
-                    <img src="frontend/images/partner.png" alt="Logo Partner" class="img-partner"/>
+                    {{-- <img src="frontend/images/partner.png" alt="Logo Partner" class="img-partner"/> --}}
                 </div>
             </div>
         </div>
     </section>
-
+{{-- 
     <section class="section-testimonial-heading" id="testimonialHeading">
         <div class="container">
             <div class="row">
@@ -214,7 +215,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 </main>
 @endsection
 
