@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,16 +15,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])
-    ->name('home');
 
-// Route::get('/login', [LoginController::class, 'login'])
-// ->name('login');    
-
-Route::get('login', function () {
-    return view('pages.login');
-})->name('login');  
+Route::get('/', [HomeController::class, 'index'] 
+)->name('home');
 
 Route::get('success', function () {
     return view('pages.success_checkout');
-})->name('success');  
+})->name('success');
+
+
+// socialite routes
+Route::get('sign-in-google', [UserController::class, 'google']
+)->name('user.login.google');
+
+Route::get('auth/google/callback', [UserController::class, 'handleProviderCallback'])->name('user.google.callback');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
