@@ -15,14 +15,17 @@
             <li class="nav-item mx-md-2">
                 <a href="#" class="nav-link">Paket Room</a>
             </li>
-            <li class="nav-item dropdown">
+                        <li class="nav-item">
+                <a href="#" class="nav-link">Service</a>
+            </li>
+            {{-- <li class="nav-item dropdown">
                 <a href="" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Service</a>
                 <div class="dropdown-menu">
                     <a href="#" class="dropdown-item">Link</a>
                     <a href="" class="dropdown-item">Link</a>
                     <a href="" class="dropdown-item">Link</a>
                 </div>
-            </li>
+            </li> --}}
             <li class="nav-item mx-md-2">
                 <a href="#" class="nav-link">Testimonial</a>
             </li>
@@ -51,11 +54,17 @@
             </button>
         </form>
         <!-- Desktop Button -->
-        <form class="form-inline my-2 my-lg-0 d-none d-md-block" action="{{ url('logout') }}" method="POST">
+        <form id="logout-form" class="form-inline my-2 my-lg-0 d-none d-md-block" action="{{ url('logout') }}" method="POST">
             @csrf
-            <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" type="submit">
-                Keluar
-            </button>
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a href="#" role ="button" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Halo, {{ Str::limit(Auth::user()->name, 8, '!') }}</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">My Dashboard</a>
+                    <a href="" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Keluar</a>
+                </div>
+            </li>
+            </ul>
         </form>    
         @endauth
     </div>
