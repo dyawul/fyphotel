@@ -4,10 +4,33 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Checkout;
+use App\Models\Customer;
+use App\Models\Room;
+use App\Models\User;
+use App\Repositories\Interface\CustomerRepositoryInterface;
+use App\Repositories\Interface\ReservationRepositoryInterface;
 use Illuminate\Http\Request;
+use App\Events\NewReservationEvent;
+use App\Events\RefreshDashboardEvent;
+use App\Helpers\Helper;
+use App\Http\Requests\ChooseRoomRequest;
+use App\Http\Requests\StoreCustomerRequest;
+use App\Models\Transaction;
+
+use App\Notifications\NewRoomReservationDownPayment;
+
+use App\Repositories\Interface\PaymentRepositoryInterface;
+use App\Repositories\Interface\TransactionRepositoryInterface;
 
 class CheckoutController extends Controller
 {
+
+    private $reservationRepository;
+
+    public function __construct(ReservationRepositoryInterface $reservationRepository)
+    {
+        $this->reservationRepository = $reservationRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,9 +41,28 @@ class CheckoutController extends Controller
         
     }
 
-    public function viewCountPerson(Customer $customer) 
+    public function viewCountPerson(User $user)
     {
-        return view('home', compact('customer'));
+        return view('pages.home', compact('user'));
+    }
+
+    public function chooseRoom(ChooseRoomRequest $request, User $user)
+    {
+        $stayFrom = $request->check_in;
+        $stayUntil = $request->check_out;
+
+        $occupiedRoomId = $this->getOccupiedRoomID($request->check_in, $request->check_out);
+
+        $rooms = $this->reservationRepository->getUnocuppiedroom($request, $occupiedRoomId);
+        $roomsCount = $this->reservationRepository->countUnocuppiedroom($request, $occupiedRoomId);
+
+        return view('transaction.reservation.chooseRoom', compact(
+            'user',
+            'rooms',
+            'stayFrom',
+            'stayUntil',
+            'roomsCount'
+        ));
     }
 
     /**
