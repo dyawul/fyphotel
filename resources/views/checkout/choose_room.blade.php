@@ -1,6 +1,6 @@
 @extends('layouts.success')
 
-@section('title', 'Pick Room')
+@section('title', 'Choose Room')
 @section('alternate-navbar-title', 'Choose Room')
 
 @section('content')
@@ -16,7 +16,7 @@
                         Paket Room
                     </li>
                     <li class="breadcrumb-item active">
-                        Room Available
+                        Choose Room
                     </li>
                 </ol>
             </nav>

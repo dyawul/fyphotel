@@ -27,10 +27,10 @@
     <div class="container ">
         <section class="section-stats row justify-content-center" id="stats">
             <div class="col-12 col-md-10 stats-detail">
-                <form class="form-inline custom-form" method="GET" action="{{ route()}}">
+                <form class="form-inline custom-form" method="GET" action="{{ route('checkout.choose.room', ['customer' => $user->id]) }}">
                     @csrf
-                    <label for="inputUsername" class="sr-only">How many Person</label>
-                    <input type="number" name="inputUsername" class="form-control mb-2 mr-sm-2" id="inputUsername" placeholder="How many person">
+                    <label for="countPerson" class="sr-only">How many Person</label>
+                    <input type="text" name="countPerson" class="form-control mb-2 mr-sm-2" id="countPerson" placeholder="How many person">
                     <label for="checkIn" class="sr-only">Check In</label>
                     <div class="input-group mb-2 mr-sm-2">
                         <input type="text" class="form-control datepicker" id="checkIn" placeholder="Check In">

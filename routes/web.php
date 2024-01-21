@@ -23,9 +23,9 @@ Route::get('success', function () {
     return view('pages.success_checkout');
 })->name('success');
 
-Route::get('pick-room', function () {
-    return view('pages.pick_room');
-})->name('pick.room');
+Route::get('choose-room', function () {
+    return view('checkout.choose_room');
+})->name('choose.room');
 
 // socialite routes
 Route::get('sign-in-google', [UserController::class, 'google']
