@@ -27,7 +27,7 @@
     <div class="container ">
         <section class="section-stats row justify-content-center" id="stats">
             <div class="col-12 col-md-10 stats-detail">
-                <form class="form-inline custom-form" method="GET">
+                <form class="form-inline custom-form" method="GET" action="{{ route()}}">
                     @csrf
                     <label for="inputUsername" class="sr-only"></label>
                     <input type="number" name="inputUsername" class="form-control mb-2 mr-sm-2" id="inputUsername" placeholder="How many person">
