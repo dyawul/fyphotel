@@ -1,9 +1,11 @@
 @extends('layouts.success')
 
 @section('title', 'Checkout Success')
+@section('alternate-navbar-title', 'Checkout Page')
 
 @section('content')
 <main>
+    <section class="section-success-content">
     <div class="section-success d-flex align-items-center">
         <div class="col text-center">
             <img src="{{ url('frontend/images/ic_mail.png') }}" alt="">
@@ -18,5 +20,6 @@
             </a>
         </div>
     </div>
+</div>
 </main>
 @endsection

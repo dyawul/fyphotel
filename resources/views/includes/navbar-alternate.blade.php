@@ -10,7 +10,7 @@
             <ul class="navbar-nav mr-auto d-none d-lg-block">
                 <li>
                     <span class="text-muted">
-                        | &nbsp; Checkout Page
+                        | &nbsp; @yield('alternate-navbar-title')
                     </span>
                 </li>
             </ul>

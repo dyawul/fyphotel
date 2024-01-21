@@ -7,25 +7,27 @@
 @section('content')
 <!-- Header  -->
 <header class="text-center">
-    <h1>
+    <h1 class="mt-5">
         Welcome to Fyphotel
         <br />
-        consectetur adipiscing elit
     </h1>
-    <p class="mt-3">
+    <p class="mt-2">
         Morbi eget imperdiet ipsum
         <br />
-        et pellentesque quam
     </p>
     <a href="" class="btn btn-get-started px-4 mt-4">
         Get Started
     </a> 
+    <p class="mt-4">
+        <br />
+    </p>
+
 </header>
 <main>
     <div class="container ">
         <section class="section-stats row justify-content-center" id="stats">
             <div class="col-12 col-md-10 stats-detail">
-                <form class="form-inline custom-form">
+                <form class="form-inline custom-form" method="GET" action="{{ route()}}">
                     @csrf
                     <label for="inputUsername" class="sr-only">How many Person</label>
                     <input type="number" name="inputUsername" class="form-control mb-2 mr-sm-2" id="inputUsername" placeholder="How many person">
