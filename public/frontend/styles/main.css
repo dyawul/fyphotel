@@ -145,7 +145,7 @@ header .btn-get-started:hover {
 }
 
 .section-networks {
-  background-color: #211B3D;
+  background: linear-gradient(#fff 0%, #f7f9ff 100%);
   margin-top: -170px;
   padding-top: 240px;
   padding-bottom: 50px;
@@ -234,21 +234,20 @@ header .btn-get-started:hover {
 .section-details-header {
   min-height: 310px;
   background-color: #E4E6EB;
-  margin-top: -70px;
+}
+.section-details-header .breadcrumb {
+  background-color: transparent;
+  padding: 42px 0 0 0;
+  margin-bottom: 30px;
+}
+.section-details-header .breadcrumb-item.active {
+  font-weight: bold;
+  color: #071C4D;
 }
 
 .section-details-content {
   margin-top: -210px;
   min-height: 100vh;
-}
-.section-details-content .breadcrumb {
-  background-color: transparent;
-  padding: 0;
-  margin-bottom: 30px;
-}
-.section-details-content .breadcrumb-item.active {
-  font-weight: bold;
-  color: #071C4D;
 }
 .section-details-content .card-details {
   padding: 30px;
@@ -381,29 +380,6 @@ header .btn-get-started:hover {
   color: #FFF;
 }
 
-.section-success {
-  height: 90vh;
-}
-.section-success h1 {
-  font-weight: 600;
-  font-size: 26px;
-  color: #071C4D;
-}
-.section-success p {
-  font-weight: 300;
-  font-size: 18px;
-  color: #B1B1B1;
-}
-.section-success .btn-home-page {
-  border-radius: 4px;
-  background-color: #071C4D;
-  color: #FFF;
-}
-.section-success .btn-home-page:hover {
-  background-color: #2A488E;
-  color: #FFF;
-}
-
 .login-user .right {
   width: 50%;
   float: left;
@@ -445,18 +421,18 @@ header .btn-get-started:hover {
 }
 
 .section-success {
-  height: 92vh;
-  background-color: #211B3D;
+  height: 93vh;
+  background-color: #EAE8F5;
 }
 .section-success h1 {
   font-weight: 600;
   font-size: 26px;
-  color: #fff;
+  color: #000;
 }
 .section-success p {
   font-weight: 300;
   font-size: 18px;
-  color: #B1B1B1;
+  color: #211B3D;
 }
 .section-success .btn-master, .section-success .btn-home-page, .section-success .btn-thirdty {
   padding: 11px 36px 11px 36px;
@@ -473,5 +449,89 @@ header .btn-get-started:hover {
   color: #fff;
 }
 .section-success .btn-home-page:hover {
+  background: #31B380;
+}
+
+.section-pick-content {
+  margin-top: -210px;
+  min-height: 100vh;
+  margin-bottom: 30px;
+}
+.section-pick-content .pick-container {
+  border: 0.5px solid #EAE8F5;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 11px;
+}
+.section-pick-content .pick-container h1 {
+  font-size: 26px;
+}
+.section-pick-content .pick-container h2 {
+  font-size: 20px;
+}
+.section-pick-content .pick-container p {
+  font-size: 18px;
+  color: #B1B1B1;
+}
+.section-pick-content .pick-container h3 {
+  font-weight: 300;
+  font-size: 14px;
+  color: #071C4D;
+}
+.section-pick-content .pick-container .section-pick-rooms {
+  border-radius: 11px;
+  background-color: transparent;
+}
+.section-pick-content .pick-container .section-pick-rooms .card-travel {
+  border-radius: 8px;
+  min-height: 380px;
+  background-color: #000;
+  color: #FFF;
+  padding: 30px;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+.section-pick-content .pick-container .section-pick-rooms .travel-country {
+  font-size: 18px;
+  color: #FFF;
+}
+.section-pick-content .pick-container .section-pick-rooms .travel-location {
+  font-size: 26px;
+  color: #FFF;
+}
+.section-pick-content .pick-container .section-pick-rooms .travel-button .btn-travel-details {
+  background-color: #3F0071;
+  color: #FFF;
+}
+.section-pick-content .pick-container .section-pick-rooms .travel-button .btn-travel-details:hover {
+  background-color: #211B3D;
+  color: #FFF;
+}
+
+.section-pick-page h1 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #000;
+}
+.section-pick-page p {
+  font-weight: 300;
+  font-size: 18px;
+  color: #000;
+}
+.section-pick-page .btn-master, .section-pick-page .btn-home-page, .section-pick-page .btn-thirdty {
+  padding: 11px 36px 11px 36px;
+  border-radius: 100px;
+  border: 0;
+  font-weight: 500;
+}
+.section-pick-page .btn-thirdty {
+  background: #31B380;
+  color: #fff;
+}
+.section-pick-page .btn-home-page {
+  background: #3F0071;
+  color: #fff;
+}
+.section-pick-page .btn-home-page:hover {
   background: #31B380;
 }/*# sourceMappingURL=main.css.map */

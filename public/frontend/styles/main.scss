@@ -198,7 +198,7 @@ header {
 }
 
 .section-networks {
-    background-color: $black;
+    background: linear-gradient(#fff 0%, #f7f9ff 100%);
     margin-top: -170px;
     padding-top: 240px;
     padding-bottom: 50px;
@@ -305,16 +305,9 @@ header {
 .section-details-header {
     min-height: 310px;
     background-color: #E4E6EB;
-    margin-top: -70px;
-}
-
-.section-details-content {
-    margin-top: -210px;
-    min-height: 100vh;
-
     .breadcrumb {
         background-color: transparent;
-        padding: 0;
+        padding: 42px 0 0 0;
         margin-bottom: 30px;
     }
 
@@ -324,7 +317,11 @@ header {
             color: #071C4D;
         }
     }
+}
 
+.section-details-content {
+    margin-top: -210px;
+    min-height: 100vh;
     .card-details {
         padding: 30px;
         border-radius: 11px;
@@ -504,32 +501,32 @@ header {
     }
 }
 
-.section-success {
-    height: 90vh;
+// .section-success {
+//     height: 90vh;
 
-    h1 {
-        font-weight: 600;
-        font-size: 26px;
-        color: #071C4D;
-    }
+//     h1 {
+//         font-weight: 600;
+//         font-size: 26px;
+//         color: #071C4D;
+//     }
 
-    p {
-        font-weight: 300;
-        font-size: 18px;
-        color: #B1B1B1;
-    }
+//     p {
+//         font-weight: 300;
+//         font-size: 18px;
+//         color: #B1B1B1;
+//     }
     
-    .btn-home-page {
-        border-radius: 4px;
-        background-color: #071C4D;
-        color: #FFF;
+//     .btn-home-page {
+//         border-radius: 4px;
+//         background-color: #071C4D;
+//         color: #FFF;
 
-        &:hover {
-            background-color: #2A488E;
-            color: #FFF;
-        }
-    }
-}
+//         &:hover {
+//             background-color: #2A488E;
+//             color: #FFF;
+//         }
+//     }
+// }
 
 .login-user {
     .right {
@@ -661,19 +658,19 @@ header {
 
 // }
 .section-success {
-    height: 92vh;
-    background-color: $black;
+    height: 93vh;
+    background-color: $graypurple;
     h1 {
         font-weight: 600;
         font-size: 26px;
         // color: #071C4D;
-        color: $white;
+        color: #000;
     }
 
     p {
         font-weight: 300;
         font-size: 18px;
-        color: #B1B1B1;
+        color: $black;
     }
     .btn-master {
         padding: 11px 36px 11px 36px;
@@ -707,3 +704,107 @@ header {
     //     }
     // }
 }
+.section-pick-content {
+    margin-top: -210px;
+    min-height: 100vh;
+    margin-bottom: 30px;
+    .pick-container{
+        border:0.5px solid $graypurple;
+        background-color: $white;
+        padding: 30px;
+        border-radius: 11px;
+
+        h1 {
+            font-size: 26px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #B1B1B1;
+        }
+
+        h3 {
+            font-weight: 300;
+            font-size: 14px;
+            color: #071C4D;
+        }
+        .section-pick-rooms {
+            border-radius: 11px;
+            background-color: transparent;
+           .card-travel {
+            border-radius: 8px;
+               min-height: 380px;
+               background-color: #000;
+               color: #FFF;
+               padding: 30px;
+               background-size: cover;
+               margin-bottom: 20px;
+           }
+       
+           .travel-country {
+               font-size: 18px;
+               color: #FFF;
+           }
+       
+           .travel-location{
+               font-size: 26px;
+               color: #FFF;
+           }
+       
+           .travel-button {
+               .btn-travel-details {
+                   background-color: #3F0071;
+                   color: #FFF;
+       
+                   &:hover {
+                       background-color: $black;
+                       color: #FFF;
+                   }
+               }
+           }
+        }   
+    }
+    
+   }
+.section-pick-page {
+
+    h1 {
+        font-weight: 600;
+        font-size: 26px;
+        // color: #071C4D;
+        color: #000;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 18px;
+        color: #000;
+    }
+    .btn-master {
+        padding: 11px 36px 11px 36px;
+        border-radius: 100px;
+        border: 0;
+        font-weight: map-get($font-weights, medium);
+    }
+    
+    .btn-thirdty {
+        @extend .btn-master;
+        background: $green;
+        color: $white;
+    }
+    
+        .btn-home-page {
+            @extend .btn-master;
+            background: #3F0071;
+            color: $white;
+            &:hover {
+                background: $green;
+            }
+        }
+}
+
+
