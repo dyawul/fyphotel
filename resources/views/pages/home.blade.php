@@ -27,13 +27,21 @@
     <div class="container ">
         <section class="section-stats row justify-content-center" id="stats">
             <div class="col-12 col-md-10 stats-detail">
-                <form class="form-inline custom-form" method="GET" action="{{ route('choose-room', ['user' => Auth::id()]) }}">
+                <form class="form-inline custom-form" method="GET" action="{{ route('choose-room')}}">
                     @csrf
                     <label for="countPerson" class="sr-only">How many Person</label>
-                    <input type="text" name="countPerson" class="form-control mb-2 mr-sm-2" id="countPerson" placeholder="How many person">
-                    <label for="checkIn" class="sr-only">Check In</label>
+                    <input type="text" name="countPerson" class="form-control mb-2 mr-sm-2 @error('countPerson') is-invalid @enderror" id="countPerson" placeholder="How many person" value="{{ old('countPerson') }}">@error('countPerson')
+                    {{-- <div class="text-danger mt-1">
+                        {{ $message }}
+                    </div> --}}
+                @enderror
+                    <label for="check_in" class="sr-only">Check In</label>
                     <div class="input-group mb-2 mr-sm-2">
-                        <input type="text" class="form-control datepicker" id="checkIn" placeholder="Check In">
+                        <input type="text" class="form-control datepicker @error('check_in') is-invalid @enderror"  id="check_in" name="check_in" placeholder="Check In" value="{{ old('check_in') }}" autocomplete="off">@error('check_in')
+                        {{-- <div class="text-danger mt-1">
+                            {{ $message }}
+                        </div> --}}
+                    @enderror
                     </div>
                     {{-- <label for="inputCity" class="sr-only">Jombang</label>
                     <select name="inputCity" id="inputCity" class="custom-select mb-2 mr-sm-2">
@@ -42,9 +50,13 @@
                         <option value="Semarang">Semarang</option>
                     </select> --}}
 
-                    <label for="checkOut" class="sr-only">Check Out</label>
+                    <label for="check_out" class="sr-only">Check Out</label>
                     <div class="input-group mb-2 mr-sm-2">
-                        <input type="text" class="form-control datepicker" id="checkOut" placeholder="Check Out">
+                        <input type="text" class="form-control datepicker @error('check_out') is-invalid @enderror"" id="check_out" name="check_out" placeholder="Check Out" value="{{ old('check_out') }}" autocomplete="off">@error('check_out')
+                        {{-- <div class="text-danger mt-1">
+                            {{ $message }}
+                        </div> --}}
+                    @enderror
                     </div>
 
                     <button type="submit" class="btn btn-add-now mb-2 px-4">

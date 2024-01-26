@@ -37,7 +37,7 @@
                     <div class="travel-country">Junior Room</div>
                     <div class="travel-location">IDR 750.000</div>
                     <div class="travel-button mt-auto">
-                        <a href="#" class="btn btn-travel-details px-4">
+                        <a href="{{ route('success')}}" class="btn btn-travel-details px-4">
                             Choose This
                         </a>
                     </div>

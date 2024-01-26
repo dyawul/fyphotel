@@ -4,20 +4,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
-use App\Models\Customer;
-use App\Repositories\Interface\UserRepositoryInterface;
 use Auth;
 
 
 class UserController extends Controller
 {
-    private $userRepository;
-
-    public function __construct(UserRepositoryInterface $UserRepository)
-    {
-        $this->userRepository = $UserRepository;
-    }
-
     public function login()
     {
         return view('auth.user.login');

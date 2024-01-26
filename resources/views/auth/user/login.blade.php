@@ -8,10 +8,14 @@
 
     <section class="login-user">
         <div class="left">
+           
             <img src="{{ url('frontend/images/loginregis.png') }}" alt="">
+
         </div>
         <div class="right">
+            <a href="{{ route('home')}}">
             <img src="{{ url(('frontend/images/logo-2.png'))}}" class="logo" alt="">
+        </a>
             <h1 class="header-third">
                 Start Today
             </h1>
