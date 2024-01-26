@@ -32,19 +32,24 @@
             Choose Room
         </p>
         <div class="section-pick-rooms row justify-content-center">
+            @forelse ($rooms as $room)
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card-travel text-center d-flex flex-column" style="background-image: url('frontend/images/room-1.jpg');">
-                    <div class="travel-country">Junior Room</div>
-                    <div class="travel-location">IDR 750.000</div>
+                    <div class="travel-country">{{ $room->type->name }}</div>
+                    <div class="travel-location">IDR {{ $room->price }}.000</div>
                     <div class="travel-button mt-auto">
                         <a href="{{ route('success')}}" class="btn btn-travel-details px-4">
                             Choose This
                         </a>
                     </div>
-
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            @empty
+            <h3>Theres no available room for {{ request()->input('countPerson') }} or more
+                person
+            </h3>
+        @endforelse
+            {{-- <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card-travel text-center d-flex flex-column" style="background-image: url('frontend/images/room-2.jpg');">
                     <div class="travel-country">Superior</div>
                     <div class="travel-location">IDR 825.000</div>
@@ -151,7 +156,7 @@
                     </div>
 
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
