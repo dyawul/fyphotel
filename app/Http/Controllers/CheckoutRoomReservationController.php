@@ -5,15 +5,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Helpers\Helper;
-use App\Http\Requests\CheckoutRequest;
+use App\Models\Room;
 use App\Http\Requests\ChooseRoomRequest;
 use App\Models\Checkout;
-use App\Models\User;
-use App\Models\Room;
 use App\Repositories\Interface\ReservationRepositoryInterface;
-
 use Auth;
-use Carbon\Carbon;
 
 class CheckoutRoomReservationController extends Controller
 {
@@ -46,6 +42,35 @@ class CheckoutRoomReservationController extends Controller
             ->orWhere([['check_in', '>=', $stayFrom], ['check_in', '<=', $stayUntil]])
             ->orWhere([['check_out', '>=', $stayFrom], ['check_out', '<=', $stayUntil]])
             ->pluck('room_id');
+    }
+
+    public function confirmation(Room $room, $stayFrom, $stayUntil)
+    {
+        $price = $room->price;
+        $dayDifference = Helper::getDateDifference($stayFrom, $stayUntil);
+        $downPayment = ($price * $dayDifference) * 0.15;
+        return view('checkout.confirmation', compact(
+            'room',
+            'stayFrom',
+            'stayUntil',
+            'downPayment',
+            'dayDifference'
+        ));
+    }
+
+    public function FunctionName(Room $room)
+    {
+        return view('checkout.confirmation', ['room' => $room]);
+    }
+
+    public function store(Request $request, Room $room)
+    {
+        $data = $request->all();
+        $data['user_id'] = Auth::id();
+        $data['room_id'] = $room->id;
+
+        $checkout = Checkout::create($data);
+        return redirect(route('success'));
     }
 
 }

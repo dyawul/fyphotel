@@ -16,7 +16,7 @@ class ReservationRepository implements ReservationRepositoryInterface
                 $query->orderBy($request->sort_name, $request->sort_type);
             })
             ->orderBy('capacity')
-            ->paginate(5);
+            ->get();
     }
 
     public function countUnocuppiedroom($request, $occupiedRoomId)

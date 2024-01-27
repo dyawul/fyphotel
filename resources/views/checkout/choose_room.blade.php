@@ -13,7 +13,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        Paket Room
+                        Home
                     </li>
                     <li class="breadcrumb-item active">
                         Choose Room
@@ -27,7 +27,12 @@
 <section class="section-pick-content" id="pickContent">
 
     <div class="container pick-container">
-        <h1>13 Room Available</h1>
+        <h1>{{ $roomsCount }} Room Available</h1>
+        <p>
+            {{ request()->input('countPerson') }} {{ Helper::plural('People', request()->input('countPerson')) }} on
+            {{ Helper::dateFormat(request()->input('check_in')) }} -
+            {{ Helper::dateFormat(request()->input('check_out')) }}
+        </p>
         <p>
             Choose Room
         </p>
@@ -36,9 +41,9 @@
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card-travel text-center d-flex flex-column" style="background-image: url('frontend/images/room-1.jpg');">
                     <div class="travel-country">{{ $room->type->name }}</div>
-                    <div class="travel-location">IDR {{ $room->price }}.000</div>
+                    <div class="travel-location">{{ Helper::convertToRupiah($room->price) }}</div>
                     <div class="travel-button mt-auto">
-                        <a href="{{ route('success')}}" class="btn btn-travel-details px-4">
+                        <a href="{{ route('confirmation', ['room' => $room->id, 'from' => request()->input('check_in'), 'to' => request()->input('check_out')])}}" class="btn btn-travel-details px-4">
                             Choose This
                         </a>
                     </div>

@@ -58,7 +58,7 @@
             @csrf
             <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-                <a href="#" role ="button" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Halo, {{ Str::limit(Auth::user()->name, 8, '!') }}</a>
+                <a href="#" role ="button" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Halo, {{ Auth::user()->name }}!</a>
                 <div class="dropdown-menu">
                     <a href="#" class="dropdown-item">My Dashboard</a>
                     <a href="" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Keluar</a>

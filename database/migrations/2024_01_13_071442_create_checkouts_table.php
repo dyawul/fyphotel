@@ -18,12 +18,8 @@ class CreateCheckoutsTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('room_id')->constrained();
             $table->string('card_number', 20);
-            $table->date('expired');
-            $table->string('cvc', 3);
-            $table->boolean('is_paid')->default(false);
             $table->date('check_in');
             $table->date('check_out');
-            $table->string('status');
             $table->timestamps();
             $table->softDeletes();
         });

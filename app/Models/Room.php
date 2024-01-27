@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Auth;
+use App\Models\Checkout;
 
 class Room extends Model
 {
@@ -17,6 +19,7 @@ class Room extends Model
         'price',
         'view'
     ];
+
     public function type()
     {
         return $this->belongsTo(Type::class);

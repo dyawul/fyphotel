@@ -28,9 +28,8 @@
         <section class="section-stats row justify-content-center" id="stats">
             <div class="col-12 col-md-10 stats-detail">
                 <form class="form-inline custom-form" method="GET" action="{{ route('choose-room')}}">
-                    @csrf
                     <label for="countPerson" class="sr-only">How many Person</label>
-                    <input type="text" name="countPerson" class="form-control mb-2 mr-sm-2 @error('countPerson') is-invalid @enderror" id="countPerson" placeholder="How many person" value="{{ old('countPerson') }}">@error('countPerson')
+                    <input type="text" name="countPerson" class="form-control mb-2 mr-sm-2 @error('countPerson') is-invalid @enderror" id="countPerson" placeholder="How many person" value="{{ old('countPerson') }}" autocomplete="off">@error('countPerson')
                     {{-- <div class="text-danger mt-1">
                         {{ $message }}
                     </div> --}}

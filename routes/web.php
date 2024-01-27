@@ -20,17 +20,26 @@ use App\http\Controllers\CheckoutRoomReservationController;
 Route::get('/', [HomeController::class, 'index'] 
 )->name('home');
 
-Route::get('success', function () {
-    return view('pages.success_checkout');
-})->name('success');
+
 
 // Route::get('choose-room', function () {
 //     return view('checkout.choose_room');
 // })->name('choose-room');
 
+Route::middleware(['auth'])->group(function () {
+
+Route::get('checkout/success', function () {
+    return view('pages.success_checkout');
+})->name('success');
 
 Route::get('choose-room', [CheckoutRoomReservationController::class, 'chooseRoom']
 )->name('choose-room');
+
+Route::get('/{room}/{from}/{to}/confirmation', [CheckoutRoomReservationController::class, 'confirmation']
+)->name('confirmation');
+
+Route::post('checkout/{room}', [CheckoutRoomReservationController::class, 'store'])->name('checkout.store');
+});
 
 // Route::get('{user}/choose-room', [CheckoutRoomReservationController::class, 'chooseRoom']
 // )->name('choose-room');

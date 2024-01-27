@@ -30,5 +30,12 @@ class Checkout extends Model
         return $this->belongsTo(Room::class);
     }
 
+    public function getDateDifferenceWithPlural()
+    {
+        $day = Helper::getDateDifference($this->check_in, $this->check_out);
+        $plural = Str::plural('Day', $day);
+        return $day . ' ' . $plural;
+    }
+
 
 }
